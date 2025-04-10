@@ -1,6 +1,6 @@
 
 # Read the input file
-file = open('d2input.txt')
+file = open(r'C:\Users\joshu\Documents\AoC\Day2\d2input.txt')
 
 
 safe_count = 0
@@ -12,6 +12,8 @@ for report in file:
     ascending = False
     descending = False
 
+    # create problem dampener counter
+    problem_dampener = True
 
     # convert text line to list of integers
     levels = list(map(int, report.split()))
@@ -23,17 +25,26 @@ for report in file:
         diff = level - prev_level
 
         if not (1 <= abs(diff) <=3):
+
+            if problem_dampener == True:
+                problem_dampener = False
+                break
+
             is_safe = False
-            break
 
         if diff > 0:
             ascending = True
         elif diff < 0:
             descending = True
 
+
         if ascending and descending:
+
+            if problem_dampener == True:
+                problem_dampener = False
+                break
+
             is_safe = False
-            break
         
         prev_level = level
 
