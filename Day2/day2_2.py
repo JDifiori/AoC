@@ -1,7 +1,6 @@
 
 # Read the input file
-file = open('d2input.txt')
-
+file = open(r'C:\Users\Joshu\Documents\Python_projects\AoC\AoC\Day2\d2input.txt')
 
 safe_count = 0
 
@@ -11,6 +10,7 @@ for report in file:
     is_safe = True
     ascending = False
     descending = False
+    problem = 0
 
 
     # convert text line to list of integers
@@ -23,8 +23,8 @@ for report in file:
         diff = level - prev_level
 
         if not (1 <= abs(diff) <=3):
-            is_safe = False
-            break
+            # is_safe = False
+            problem += 1
 
         if diff > 0:
             ascending = True
@@ -32,15 +32,13 @@ for report in file:
             descending = True
 
         if ascending and descending:
-            is_safe = False
-            break
+            problem += 1
+            # is_safe = False
         
         prev_level = level
 
-
-    if is_safe:
+    if problem < 2:
         safe_count += 1
-
 
 print(safe_count)
 
