@@ -7,3 +7,8 @@
 # if not valid, drop
 # perform multiplication if valid and add to sum
 
+file = open(r'C:\Users\joshu\Documents\AoC\Day3\d3input.txt')
+
+
+
+file.close()
