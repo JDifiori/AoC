@@ -1,7 +1,11 @@
 
 # Read the input file
+<<<<<<< HEAD
 file = open(r'C:\Users\joshu\Documents\AoC\Day2\d2input.txt')
 
+=======
+file = open(r'C:\Users\Joshu\Documents\Python_projects\AoC\AoC\Day2\d2input.txt')
+>>>>>>> 0af27a358fe1b2303f673281d4357e8c212b900e
 
 safe_count = 0
 
@@ -11,6 +15,7 @@ for report in file:
     is_safe = True
     ascending = False
     descending = False
+    problem = 0
 
     # create problem dampener counter
     problem_dampener = True
@@ -30,6 +35,7 @@ for report in file:
         diff = level - prev_level
 
         if not (1 <= abs(diff) <=3):
+<<<<<<< HEAD
 
             if problem_dampener == True:
                 problem_dampener = False
@@ -37,6 +43,10 @@ for report in file:
                 break 
                             
             is_safe = False
+=======
+            # is_safe = False
+            problem += 1
+>>>>>>> 0af27a358fe1b2303f673281d4357e8c212b900e
 
         if diff > 0:
             ascending = True
@@ -45,6 +55,7 @@ for report in file:
 
 
         if ascending and descending:
+<<<<<<< HEAD
 
             if problem_dampener == True:
                 problem_dampener = False
@@ -76,8 +87,15 @@ for report in file:
             prev_level = level
 
     if is_damp_safe:
-        safe_count += 1
+=======
+            problem += 1
+            # is_safe = False
+        
+        prev_level = level
 
+    if problem < 2:
+>>>>>>> 0af27a358fe1b2303f673281d4357e8c212b900e
+        safe_count += 1
 
 print(safe_count)
 
